@@ -10,10 +10,12 @@ const Form = () => {
 
   const handleChangeName = (e) => {
     setUser({ ...user, name: e.target.value });
+    setShow(false);
   };
 
   const handleChangeEmail = (e) => {
     setUser({ ...user, email: e.target.value });
+    setShow(false);
   };
 
   const handleSubmit = (e) => {
