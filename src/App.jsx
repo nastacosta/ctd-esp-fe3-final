@@ -5,6 +5,7 @@ import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import Detail from "./Routes/Detail";
+import Missing from "./Routes/Missing";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/favs" element={<Favs />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Missing />} />
       </Routes>
       <Footer />
     </div>

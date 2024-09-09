@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
   const [dentista, setDentista] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
@@ -20,7 +21,12 @@ const Detail = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   return (
     <>
-      <h1>Detail Dentist {params.id}</h1>
+      <div className="detailTitleSection">
+        <button className="goBackButton" onClick={() => navigate(-1)}>
+          <img src="/images/back.png" alt="go back" />
+        </button>
+        <h1>Detail Dentist {params.id}</h1>
+      </div>
       <section className="detailGrid">
         <div>
           <b>Name</b>

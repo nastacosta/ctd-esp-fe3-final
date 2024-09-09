@@ -151,3 +151,44 @@ tr:nth-child(even) {
   border: 1.5px solid gray;
   padding: 0.4rem;
 }
+
+.missingSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  margin: 5rem auto;
+}
+
+.missingSection h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.missingSection p {
+  font-size: 1.5rem;
+}
+
+.detailTitleSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+.detailTitleSection h1 {
+  padding: 0;
+}
+
+.goBackButton {
+  height: 3rem;
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.goBackButton img {
+  height: 100%;
+}
