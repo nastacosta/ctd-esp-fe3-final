@@ -22,10 +22,10 @@ const Home = () => {
       <div className="card-grid">
         {dentistas.map((dentista) => (
           <Card
-            key={dentista.id}
             name={dentista.name}
             username={dentista.username}
             id={dentista.id}
+            key={dentista.id}
           ></Card>
         ))}
       </div>

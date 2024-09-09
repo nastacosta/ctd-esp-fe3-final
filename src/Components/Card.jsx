@@ -1,9 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ name, username, id }) => {
+const Card = ({ name, username, id, alreadyFav }) => {
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    const dentista = { name: name, username: username, id: id };
+
+    let favsArray = JSON.parse(localStorage.getItem("dentistasFavs"));
+    let alreadyFav = false;
+
+    favsArray
+      ? favsArray.map((favs) => {
+          if (favs.id == dentista.id) {
+            alreadyFav = true;
+          }
+        })
+      : (favsArray = []);
+
+    if (!alreadyFav) {
+      favsArray.push(dentista);
+      console.log(`Dentista ${dentista.id} añadid@ a favoritos con éxito`);
+      localStorage.setItem("dentistasFavs", JSON.stringify(favsArray));
+    } else {
+      console.log(`Dentista ${dentista.id} ya estaba en favoritos`);
+    }
   };
 
   return (
@@ -13,10 +32,13 @@ const Card = ({ name, username, id }) => {
         <p>{username}</p>
         <img src="/images/doctor.jpg" width={190} alt="doctor" />
       </Link>
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      <button onClick={addFav} className="favButton">
-        Add fav
-      </button>
+      {alreadyFav ? (
+        <button className="favButton">Already fav</button>
+      ) : (
+        <button onClick={addFav} className="favButton">
+          Add fav
+        </button>
+      )}
     </div>
   );
 };
