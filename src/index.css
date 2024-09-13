@@ -132,11 +132,11 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark {
+.darkTheme {
   background-color: #12121296;
   color: white;
 }
-.dark > a {
+.darkTheme > a {
   color: white;
 }
 
@@ -191,4 +191,8 @@ tr:nth-child(even) {
 
 .goBackButton img {
   height: 100%;
+}
+
+.Apps {
+  scale: 2;
 }

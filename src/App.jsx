@@ -6,10 +6,13 @@ import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import Detail from "./Routes/Detail";
 import Missing from "./Routes/Missing";
+import { useContextGlobal } from "./Components/utils/Context";
 
 function App() {
+  const { state } = useContextGlobal();
+
   return (
-    <div className="App">
+    <div className={state.darkTheme ? "App darkTheme" : "App lightTheme"}>
       <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />

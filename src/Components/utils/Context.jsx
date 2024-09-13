@@ -35,8 +35,9 @@ const reducer = (state, action) => {
         return { ...state };
       }
 
-    case "THEME":
-      return "";
+    case "CHANGE_THEME":
+      localStorage.setItem("darkTheme", action.payload);
+      return { ...state, darkTheme: action.payload };
     default:
       break;
   }
@@ -59,6 +60,10 @@ const Context = ({ children }) => {
 
     const initialStorage = JSON.parse(localStorage.getItem("dentistasFavs"));
     dispatch({ type: "IMPORT_FAVS", payload: initialStorage });
+
+    let localStorageTheme = localStorage.getItem("darkTheme");
+    localStorageTheme = localStorageTheme === "true" ? true : false;
+    dispatch({ type: "CHANGE_THEME", payload: localStorageTheme });
   }, []);
 
   return (
