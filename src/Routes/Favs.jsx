@@ -4,7 +4,6 @@ import Card from "../Components/Card";
 
 const Favs = () => {
   const dentistasFavs = JSON.parse(localStorage.getItem("dentistasFavs"));
-  console.log(dentistasFavs);
 
   return (
     <>

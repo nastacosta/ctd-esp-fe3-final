@@ -6,7 +6,6 @@ import { useContextGlobal } from "../Components/utils/Context";
 
 const Home = () => {
   const { state, dispatch } = useContextGlobal();
-  console.log(state.favs);
 
   return (
     <main className="a">
